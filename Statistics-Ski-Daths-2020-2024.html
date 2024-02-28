@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ski Death Statistics 2020-2022</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        footer {
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ski-Related Death Statistics (2020-2022)</h1>
+    </header>
+    <main>
+        <table id="death-stats">
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Number of Deaths</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </main>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const stats = [
+                { year: '2020', deaths: '300' },
+                { year: '2021', deaths: '450' },
+                { year: '2022', deaths: '420' }
+            ];
+
+            const tbody = document.querySelector('#death-stats tbody');
+            stats.forEach(stat => {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${stat.year}</td><td>${stat.deaths}</td>`;
+                tbody.appendChild(row);
+            });
+        });
+    </script>
+</body>
+</html>
