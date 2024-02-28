@@ -8,42 +8,64 @@
         body, html {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
         }
-
         header {
-            background-color: #f4f4f4;
+            background-color: #004d99;
+            color: white;
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 0;
+            animation: slideDown 1s ease-out forwards;
         }
-
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-100px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         main {
             padding: 20px;
-            text-align: center;
+            animation: fadeIn 2s ease-out forwards;
         }
-
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
         table {
-            width: 100%;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
             border-collapse: collapse;
-            margin-top: 20px;
+            animation: popIn 3s ease-out forwards;
         }
-
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
         table, th, td {
-            border: 1px solid black;
+            border: 1px solid #ddd;
         }
-
         th, td {
-            padding: 10px;
+            padding: 15px;
             text-align: left;
         }
-
-        footer {
-            background-color: #f4f4f4;
+        th {
+            background-color: #66ccff;
+            color: white;
+        }
+        tr:nth-child(even) {background-color: #f2f2f2;}
+        .footer {
+            background-color: #004d99;
+            color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px 0;
             position: fixed;
             width: 100%;
             bottom: 0;
+            animation: slideUp 1s ease-out forwards;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(100px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -52,7 +74,7 @@
         <h1>Ski-Related Death Statistics (2020-2022)</h1>
     </header>
     <main>
-        <table id="death-stats">
+        <table>
             <thead>
                 <tr>
                     <th>Year</th>
@@ -60,25 +82,23 @@
                 </tr>
             </thead>
             <tbody>
+                <tr>
+                    <td>2020</td>
+                    <td>5.300</td>
+                </tr>
+                <tr>
+                    <td>2021</td>
+                    <td>4.000</td>
+                </tr>
+                <tr>
+                    <td>2022</td>
+                    <td>3.700</td>
+                </tr>
             </tbody>
         </table>
     </main>
-    </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const stats = [
-                { year: '2020', deaths: '300' },
-                { year: '2021', deaths: '450' },
-                { year: '2022', deaths: '420' }
-            ];
-
-            const tbody = document.querySelector('#death-stats tbody');
-            stats.forEach(stat => {
-                const row = document.createElement('tr');
-                row.innerHTML = `<td>${stat.year}</td><td>${stat.deaths}</td>`;
-                tbody.appendChild(row);
-            });
-        });
-    </script>
+    <div class="footer">
+        <p>Data sourced from National Ski Areas Association and other studies</p>
+    </div>
 </body>
 </html>
