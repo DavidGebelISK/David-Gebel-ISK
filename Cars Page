@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Cars Showcase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="parallax" id="home" style="background-image:url('https://example.com/fastest-cars-bg.jpg');">
+        <div class="text-block">
+            <h1>Welcome to Top Cars Showcase</h1>
+            <p>Discover the world's top cars</p>
+        </div>
+    </div>
+
+    <div class="section" id="fastest-cars">
+        <h2>Top 20 Fastest Cars</h2>
+        <div class="car-list" id="fastest-list"></div>
+    </div>
+
+    <div class="parallax" id="luxury" style="background-image:url('https://example.com/luxury-cars-bg.jpg');">
+        <div class="text-block">
+            <h2>Most Luxury Cars</h2>
+        </div>
+    </div>
+
+    <div class="section" id="luxury-cars">
+        <div class="car-list" id="luxury-list"></div>
+    </div>
+
+    <div class="parallax" id="best-price" style="background-image:url('https://example.com/best-price-cars-bg.jpg');">
+        <div class="text-block">
+            <h2>Best Cars for the Price</h2>
+        </div>
+    </div>
+
+    <div class="section" id="price-cars">
+        <div class="car-list" id="price-list"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
